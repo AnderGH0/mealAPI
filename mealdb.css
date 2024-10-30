@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unkempt:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+body {
+  font-family: "Unkempt";
+  background-color: #4F3130;
+  height: 100vh;
+  align-content: center;
+}
+body .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .container .search-title {
+  font-size: 3rem;
+}
+body .container .search-input {
+  background-color: #D8BD8A;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 3px;
+  width: 400px;
+  height: 2rem;
+  margin: 20px 15px 0;
+  padding: 10px;
+}
+body .container .search-button {
+  height: 41px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  width: 80px;
+  background-color: #AA5042;
+}
+body .container .search-button:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+body .container .search-result {
+  margin-top: 20px;
+  max-width: 80%;
+  display: none;
+  height: auto;
+  background-color: #753742;
+  border-radius: 10px;
+}
+body .container .search-result h1 {
+  text-align: center;
+}
+body .container .search-result .meals {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1%;
+  padding: 20px;
+}
+body .container .search-result .meals .meal-container {
+  width: 19%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #D8BD8A;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .container .search-result .meals .meal-container:hover {
+  cursor: pointer;
+}
+body .modal {
+  background-color: #D8D78F;
+  position: absolute;
+  max-width: 50%;
+  width: 50%;
+  height: auto;
+  top: 10%;
+  left: 20%;
+  border-radius: 5px;
+  display: none;
+  grid-template-areas: "title" "content";
+  padding: 20px;
+}
+body .modal .cross {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 2.6rem;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+body .modal .cross:hover {
+  cursor: pointer;
+}
+body .modal .cross::after, body .modal .cross::before {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  top: 40%;
+  left: 0px;
+  content: "";
+}
+body .modal .cross::after {
+  transform: rotate(45deg);
+}
+body .modal .cross::before {
+  transform: rotate(-45deg);
+}
+body .modal-name {
+  grid-area: "title";
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  padding: 0 40px;
+}
+body .modal-container {
+  display: grid;
+  grid-area: "content";
+  grid-template-areas: "left right";
+  grid-template-columns: 2fr 4fr;
+}
+body .modal-container .modal-leftSide {
+  grid-area: "left";
+  display: grid;
+  grid-template-areas: "img" "ingredients" "list";
+}
+body .modal-container .modal-leftSide-img {
+  border-radius: 20%;
+  grid-area: "img";
+  margin-bottom: 10px;
+}
+body .modal-container .modal-leftSide-ingredients {
+  text-align: center;
+  grid-area: "list";
+  margin-bottom: 10px;
+}
+body .modal-container .modal-leftSide-ingredientList {
+  grid-area: "ingredients";
+  font-size: 1.3rem;
+  margin-left: 6%;
+}
+body .modal-container .modal-rightSide {
+  grid-area: "right";
+}
+body .modal-container .modal-rightSide .instructions {
+  text-align: center;
+}
+body .modal-container .modal-rightSide .instructionsText {
+  margin-top: 10px;
+  padding-left: 50px;
+  font-family: "Poppins";
+}
