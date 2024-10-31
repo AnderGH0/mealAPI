@@ -90,9 +90,13 @@ body .container .search-result .meals .meal-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: 0.3s;
 }
 body .container .search-result .meals .meal-container:hover {
   cursor: pointer;
+}
+body .container .search-result .meals .meal-container:hover {
+  transform: scale(1.1);
 }
 body .modal {
   background-color: #D8D78F;
@@ -143,9 +147,11 @@ body .modal-name {
   grid-area: "title";
   text-align: center;
   letter-spacing: 4px;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   padding: 0 40px;
+  font-weight: 800;
+  color: #753742;
 }
 body .modal-container {
   display: grid;
@@ -162,13 +168,16 @@ body .modal-container .modal-leftSide-img {
   border-radius: 20%;
   grid-area: "img";
   margin-bottom: 10px;
+  border: 5px double #753742;
 }
 body .modal-container .modal-leftSide-ingredients {
+  color: #AA5042;
   text-align: center;
   grid-area: "list";
   margin-bottom: 10px;
 }
 body .modal-container .modal-leftSide-ingredientList {
+  color: #4F3130;
   grid-area: "ingredients";
   font-size: 1.3rem;
   margin-left: 6%;
@@ -178,8 +187,10 @@ body .modal-container .modal-rightSide {
 }
 body .modal-container .modal-rightSide .instructions {
   text-align: center;
+  color: #AA5042;
 }
 body .modal-container .modal-rightSide .instructionsText {
+  color: #4F3130;
   margin-top: 10px;
   padding-left: 50px;
   font-family: "Poppins";
