@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unkempt:wght@400;700&display=swap');
+$brown: #4F3130;
+$wine: #753742;
+$redwood: #AA5042;
+$ecru: #D8BD8A;
+$flax: #D8D78F;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar{
+    display: block;
+    &-thumb {
+        border: 1px solid $brown;
+        border-radius: 5px;
+        background-color: $redwood;
+    }
+    &-track{
+        background-color: $wine;
+    }
+}
+
+body {
+    font-family: "Unkempt";
+    background-color: $brown;
+    height: 100vh;
+    align-content: center;
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .search{
+            &-title{
+                font-size: 3rem;
+            }
+            &-input{
+                background-color: $ecru;
+                border: none;
+                font-size: 1.5rem;
+                border-radius: 3px;
+                width: 400px;
+                height: 2rem;
+                margin: 20px 15px 0;
+                padding: 10px;
+            }
+            &-button{
+                height: 41px;
+                font-size: 1.2rem;
+                border: none;
+                border-radius: 5px;
+                width: 80px;
+                background-color:$redwood;
+                &:hover{
+                    cursor: pointer;
+                    border: 2px solid black;
+                }
+            }
+        }
+        .search-result {
+            margin-top: 20px;
+            max-width: 80%;
+            display: none;
+            height: auto;
+            background-color: $wine;
+            border-radius: 10px;
+            h1 {
+                text-align: center;
+            }
+            .meals {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                gap: 1%;
+                padding: 20px;
+                .meal-container {
+                    width: 19%;
+                    margin-bottom: 10px;
+                    padding: 5px;
+                    border-radius: 5px;
+                    background-color: $ecru;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .modal {
+        background-color: $flax;
+        position: fixed;
+        max-width: 50%;
+        height: 90%;
+        top: 5%;
+        left: 20%;
+        border-radius: 5px;
+        display: none;
+        grid-template-areas: "title"
+                            "content";
+        padding: 20px;
+        overflow: auto;
+        .cross {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 2px solid black;
+            border-radius: 4px;
+            font-weight: 800;
+            font-size: 2.6rem;
+            top: 5%;
+            right: 31%;
+            justify-self: right;
+            text-align: center;
+            background-color: $redwood;
+            &:hover {
+                cursor: pointer;
+            }
+            &::after, &::before{
+                width: 100%;
+                height: 3px;
+                background-color: black;
+                position: absolute;
+                top: 43%;
+                left: 0px;
+                content: "";
+            }
+            &::after{
+                transform: rotate(45deg);
+            }
+            &::before{
+                transform: rotate(-45deg);
+            }
+        }
+        &-name{
+            grid-area: "title";
+            text-align: center;
+            letter-spacing: 4px;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            padding: 0 40px;
+        }
+        &-container {
+            display: grid;
+            grid-area: "content";
+            grid-template-areas: "left right";
+            grid-template-columns: 2fr 4fr;
+            
+            .modal-leftSide{
+                grid-area: "left";
+                display: grid;
+                grid-template-areas: "img"
+                                    "ingredients"
+                                    "list";
+                &-img{
+                    border-radius: 20%;
+                    grid-area: "img";
+                    margin-bottom: 10px;
+                }
+                &-ingredients{
+                    text-align: center;
+                    grid-area: "list";
+                    margin-bottom: 10px;
+                }
+                &-ingredientList {
+                    grid-area: "ingredients";
+                    font-size: 1.3rem;
+                    margin-left: 6%;
+                }
+            }
+            .modal-rightSide{
+                grid-area: "right";
+                .instructions {
+                    text-align: center;
+                }
+                .instructionsText {
+                    margin-top: 10px;
+                    padding-left: 50px;
+                    font-family: "Poppins";
+                }
+            }
+            
+        }
+        &::-webkit-scrollbar{
+            &-track{
+                border-radius: 5px;
+                background-color: $ecru;
+            }
+        }
+        
+    }
+}
+

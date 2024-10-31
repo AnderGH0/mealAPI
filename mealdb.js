@@ -64,12 +64,14 @@ const addSearchTitle = (words) =>{
 
 //close modal
 cross.addEventListener("click", ()=>{
-    modal.style.display = "none"
+    modal.style.display = "none";
+    document.querySelector("body").style.overflowY = "auto"
 })
 //open modal
 const openModal =async (name) =>{
     ingredientsList.innerHTML = "";
-    modal.style.display = "grid"
+    modal.style.display = "grid";
+    document.querySelector("body").style.overflowY = "hidden"
     const response = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=" + name);
     const mealObj = await response.json();
     document.querySelector(".modal-leftSide-img").src = mealObj.meals[0].strMealThumb;
